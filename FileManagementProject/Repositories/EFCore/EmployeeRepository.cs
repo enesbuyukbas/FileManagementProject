@@ -12,21 +12,22 @@ namespace FileManagementProject.Repositories.EFCore
 
         }
 
-        public void CreateOneEmployee(Employee employee) => Create(employee);
+        public void CreateOneEmployeeAsync(Employee employee) => Create(employee);
 
-        public void DeleteOneEmployee(Employee employee) => Delete(employee);
+        public void DeleteOneEmployeeAsync(Employee employee) => Delete(employee);
 
-        public IQueryable<Employee> GetAllEmployees(bool trackChanges) =>
-            FindAll(trackChanges);
+        public async Task<IEnumerable<Employee>> GetAllEmployeesAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
+            .ToListAsync();
 
 
-        public Employee GetOneEmployeeById(int id, bool trackChanges) =>
-            FindByCondition(b => b.EmployeeId.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<Employee> GetOneEmployeeByIdAsync(int id, bool trackChanges) =>
+            await FindByCondition(b => b.EmployeeId.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
         public Employee GetOneEmployeeWithDepartment(int id, bool trackChanges)
         {
-            var employee = _context.Employees
+            var employee =  _context.Employees
                     .Include(e => e.Department) 
                     .Where(e => e.EmployeeId.Equals(id))
                     .SingleOrDefault();
@@ -37,7 +38,7 @@ namespace FileManagementProject.Repositories.EFCore
             return employee;
         }
 
-        public void UpdateOneEmployee(Employee employee) => Update(employee);
+        public void UpdateOneEmployeeAsync(Employee employee) => Update(employee);
 
     }
 }

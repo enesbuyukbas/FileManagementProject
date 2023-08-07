@@ -19,52 +19,47 @@ namespace FileManagementProject.Services
             _mapper = mapper;
         }
 
-        public Employee CreateOneEmployee(Employee employee)
+
+        public async Task<Employee> CreateOneEmployeeAsync(Employee employee)
         {
 
-            _manager.Employee.CreateOneEmployee(employee);
-            _manager.Save();
+            _manager.Employee.CreateOneEmployeeAsync(employee);
+            await _manager.SaveAsync();
             return employee;
         }
 
-        public void DeleteOneEmployee(int id, bool trackChanges)
+        public async Task DeleteOneEmployeeAsync(int id, bool trackChanges)
         {
             // check entity
-            var entity = _manager.Employee.GetOneEmployeeById(id, trackChanges);
-            if (entity is null)
-                throw new EmployeeNotFoundException(id);
-
-            _manager.Employee.DeleteOneEmployee(entity);
-            _manager.Save();
+            var entity = await GetOneEmployeeByIdAndCheckExists(id, trackChanges);
+            _manager.Employee.DeleteOneEmployeeAsync(entity);
+            await _manager.SaveAsync();
         }
 
-        public IEnumerable<EmployeeDto> GetAllEmployees(bool trackChanges)
+        public async Task<IEnumerable<EmployeeDto>> GetAllEmployeesAsync(bool trackChanges)
         {
-            var employees = _manager.Employee.GetAllEmployees(trackChanges);
+            var employees = await _manager.Employee.GetAllEmployeesAsync(trackChanges);
             return _mapper.Map<IEnumerable<EmployeeDto>>(employees);
 
         }
 
-        public Employee GetOneEmployeeById(int id, bool trackChanges)
+        public async Task<Employee> GetOneEmployeeByIdAsync(int id, bool trackChanges)
         {
-            var employee =  _manager.Employee.GetOneEmployeeById(id, trackChanges);
-            if(employee is null)
-                throw new EmployeeNotFoundException(id);
-            return employee;
+            var entity = await GetOneEmployeeByIdAndCheckExists(id, trackChanges);
+            return entity;
         }
 
         public Employee GetOneEmployeeWithDepartment(int id, bool trackChanges)
         {
-            return _manager.Employee.GetOneEmployeeWithDepartment(id,trackChanges);
+            var employee = _manager.Employee.GetOneEmployeeWithDepartment(id, trackChanges);
+            return employee;
 
         }
 
-        public void UpdateOneEmployee(int id, EmployeeDtoForUpdate employeeDto, bool trackChanges)
+        public async Task UpdateOneEmployeeAsync(int id, EmployeeDtoForUpdate employeeDto, bool trackChanges)
         {
             //check entity
-            var entity = _manager.Employee.GetOneEmployeeById(id, trackChanges);
-            if (entity is null)
-                throw new EmployeeNotFoundException(id);
+            var entity = await GetOneEmployeeByIdAndCheckExists(id, trackChanges);
 
             //Mapping
             //entity.EmployeeFirstName = employee.EmployeeFirstName;
@@ -75,9 +70,17 @@ namespace FileManagementProject.Services
             entity = _mapper.Map<Employee>(employeeDto);
 
             _manager.Employee.Update(entity);
-            _manager.Save();
-
-
+            await _manager.SaveAsync();
         }
+
+        private async Task<Employee> GetOneEmployeeByIdAndCheckExists(int id, bool trackChanges)
+        {
+            var entity = await _manager.Employee.GetOneEmployeeByIdAsync(id, trackChanges);
+            if (entity is null)
+                throw new EmployeeNotFoundException(id);
+
+            return entity;
+        }
+
     }
 }

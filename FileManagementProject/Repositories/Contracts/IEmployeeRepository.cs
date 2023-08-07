@@ -1,14 +1,15 @@
-﻿using FileManagementProject.Entities.Models;
+﻿using FileManagementProject.Entities.Dtos;
+using FileManagementProject.Entities.Models;
 
 namespace FileManagementProject.Repositories.Contracts
 {
     public interface IEmployeeRepository : IRepositoryBase<Employee>
     {
-        IQueryable<Employee> GetAllEmployees(bool trackChanges);
-        Employee GetOneEmployeeById(int id, bool trackChanges);
+        Task<IEnumerable<Employee>> GetAllEmployeesAsync(bool trackChanges);
+        Task<Employee> GetOneEmployeeByIdAsync(int id, bool trackChanges);
         Employee GetOneEmployeeWithDepartment(int id, bool trackChanges);
-        void CreateOneEmployee (Employee employee);
-        void UpdateOneEmployee(Employee employee);
-        void DeleteOneEmployee(Employee employee);
+        void CreateOneEmployeeAsync (Employee employee);
+        void UpdateOneEmployeeAsync(Employee employee);
+        void DeleteOneEmployeeAsync(Employee employee);
     }
 }

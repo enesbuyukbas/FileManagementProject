@@ -4,6 +4,7 @@
     {
         IEmployeeRepository Employee { get; }
         IDepartmentRepository Department { get; }
+        Task SaveAsync();
         void Save();
     }
 }

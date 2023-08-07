@@ -1,4 +1,5 @@
 using FileManagementProject.Extensions;
+using FileManagementProject.Presentation.ActionFilters;
 using FileManagementProject.Repositories.EFCore;
 using FileManagementProject.Services.Contracts;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,9 @@ LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(),"/nlo
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -20,6 +24,7 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureLoggerService();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.ConfigureActionFilters();
 
 
 var app = builder.Build();

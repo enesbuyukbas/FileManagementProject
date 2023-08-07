@@ -1,4 +1,5 @@
-﻿using FileManagementProject.Repositories.Contracts;
+﻿using FileManagementProject.Presentation.ActionFilters;
+using FileManagementProject.Repositories.Contracts;
 using FileManagementProject.Repositories.EFCore;
 using FileManagementProject.Services;
 using FileManagementProject.Services.Contracts;
@@ -28,6 +29,13 @@ namespace FileManagementProject.Extensions
         public static void ConfigureLoggerService(this IServiceCollection services)
         {
             services.AddSingleton<ILoggerService, LoggerManager>();
+        }
+
+        public static void ConfigureActionFilters(this IServiceCollection services)
+        {
+            services.AddScoped<ValidationFilterAttribute>();
+            services.AddSingleton<LogFilterAttribute>(); 
+            //loglama için bir tane nesnenin oluşması yeterli bundan dolayı singleton tanımladık
         }
     }
 }

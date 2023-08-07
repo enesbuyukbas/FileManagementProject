@@ -1,6 +1,7 @@
 ﻿using FileManagementProject.Entities.Dtos;
 using FileManagementProject.Entities.Exceptions;
 using FileManagementProject.Entities.Models;
+using FileManagementProject.Presentation.ActionFilters;
 using FileManagementProject.Repositories.Contracts;
 using FileManagementProject.Repositories.EFCore;
 using FileManagementProject.Services.Contracts;
@@ -21,19 +22,21 @@ namespace FileManagementProject.Controllers
             _manager = manager;
         }
 
+        [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("/employees")]
-        public IActionResult GetAllEmployee()
+        public async Task<IActionResult> GetAllEmployeeAsync()
         {
-               var employees = _manager.EmployeeService.GetAllEmployees(false);
+               var employees = await _manager.EmployeeService.GetAllEmployeesAsync(false);
                return Ok(employees);
         }
 
+        [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("/employee{id:int}")]
-        public IActionResult GetOneEmployee([FromRoute(Name = "id")] int id)
+        public async Task<IActionResult> GetOneEmployeeAsync([FromRoute(Name = "id")] int id)
         {
-                var employees = _manager
+                var employees = await _manager
                     .EmployeeService
-                    .GetOneEmployeeById(id, false);
+                    .GetOneEmployeeByIdAsync(id, false);
 
 
                 return Ok(employees);
@@ -41,7 +44,7 @@ namespace FileManagementProject.Controllers
         }
 
 
-
+        [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("employee/{id:int}/department")]
         public IActionResult GetEmployeeWithDepartmentName([FromRoute(Name = "id")] int id)
         {
@@ -61,40 +64,43 @@ namespace FileManagementProject.Controllers
 
         }
 
-
+        [ServiceFilter(typeof(LogFilterAttribute))]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost]
-        public IActionResult CreateOneEmployee([FromBody] Employee employee)
+        public async Task<IActionResult> CreateOneEmployeeAsync([FromBody] Employee employee)
         {
 
                 if (employee is null)
                     return BadRequest(employee);
 
-                _manager.EmployeeService.CreateOneEmployee(employee);
+                await _manager.EmployeeService.CreateOneEmployeeAsync(employee);
 
                 return Ok();
 
         }
 
+        [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpPut("{id:int}")]
-        public IActionResult UpdateEmployee([FromRoute(Name = "id")] int id, [FromBody] EmployeeDtoForUpdate employeeDto)
+        public async Task<IActionResult> UpdateEmployeeAsync([FromRoute(Name = "id")] int id, [FromBody] EmployeeDtoForUpdate employeeDto)
         {
 
                 if(employeeDto is null)
                     return BadRequest(employeeDto);
 
-                _manager.EmployeeService.UpdateOneEmployee(id, employeeDto, true);
+                await _manager.EmployeeService.UpdateOneEmployeeAsync(id, employeeDto, true);
                 return NoContent();
 
 
         }
 
+        [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpDelete]
         [Route("~/api/employee/delete/{id:int}")]
-        public IActionResult DeleteEmployee([FromRoute(Name = "id")] int id)
+        public async Task<IActionResult> DeleteEmployeeAsync([FromRoute(Name = "id")] int id)
         {
 
 
-                _manager.EmployeeService.DeleteOneEmployee(id, false);
+                await _manager.EmployeeService.DeleteOneEmployeeAsync(id, false);
 
 
                 return Ok();
