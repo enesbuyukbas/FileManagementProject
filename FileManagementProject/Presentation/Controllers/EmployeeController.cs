@@ -1,6 +1,7 @@
 ﻿using FileManagementProject.Entities.Dtos;
 using FileManagementProject.Entities.Exceptions;
 using FileManagementProject.Entities.Models;
+using FileManagementProject.Entities.RequestFeatures;
 using FileManagementProject.Presentation.ActionFilters;
 using FileManagementProject.Repositories.Contracts;
 using FileManagementProject.Repositories.EFCore;
@@ -24,9 +25,9 @@ namespace FileManagementProject.Controllers
 
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("/employees")]
-        public async Task<IActionResult> GetAllEmployeeAsync()
+        public async Task<IActionResult> GetAllEmployeeAsync([FromQuery] EmployeeParameters employeeParameters)
         {
-               var employees = await _manager.EmployeeService.GetAllEmployeesAsync(false);
+               var employees = await _manager.EmployeeService.GetAllEmployeesAsync(employeeParameters, false);
                return Ok(employees);
         }
 
@@ -65,17 +66,27 @@ namespace FileManagementProject.Controllers
         }
 
         [ServiceFilter(typeof(LogFilterAttribute))]
-        [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost]
-        public async Task<IActionResult> CreateOneEmployeeAsync([FromBody] Employee employee)
+        public async Task<IActionResult> CreateOneEmployeeAsync([FromBody] EmployeeDtoForCreate employeeDto)
         {
 
-                if (employee is null)
-                    return BadRequest(employee);
+                if (employeeDto is null)
+                    return BadRequest(employeeDto);
 
-                await _manager.EmployeeService.CreateOneEmployeeAsync(employee);
+            await _manager.EmployeeService.CreateOneEmployeeAsync(employeeDto);
 
-                return Ok();
+            var employee = new Employee
+            {
+                EmployeeId = employeeDto.EmployeeId,
+                EmployeeFirstName = employeeDto.EmployeeFirstName,
+                EmployeeLastName = employeeDto.EmployeeLastName,
+                EmployeeEmail = employeeDto.EmployeeEmail,
+                EmployeePassword = employeeDto.EmployeePassword,
+                EmployeeManagerId = employeeDto.EmployeeManagerId,
+                DepartmentId = employeeDto.DepartmentId
+            };
+
+            return Ok(employee);
 
         }
 

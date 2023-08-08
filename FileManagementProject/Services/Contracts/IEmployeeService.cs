@@ -1,14 +1,15 @@
 ﻿using FileManagementProject.Entities.Dtos;
 using FileManagementProject.Entities.Models;
+using FileManagementProject.Entities.RequestFeatures;
 
 namespace FileManagementProject.Services.Contracts
 {
     public interface IEmployeeService
     {
-        Task<IEnumerable<EmployeeDto>> GetAllEmployeesAsync(bool trackChanges);
+        Task<IEnumerable<EmployeeDto>> GetAllEmployeesAsync(EmployeeParameters employeeParameters, bool trackChanges);
         Task<Employee> GetOneEmployeeByIdAsync (int id, bool trackChanges);
         Employee GetOneEmployeeWithDepartment (int id, bool trackChanges);
-        Task<Employee> CreateOneEmployeeAsync (Employee employee);
+        Task<Employee> CreateOneEmployeeAsync (EmployeeDtoForCreate employeeDto);
         Task UpdateOneEmployeeAsync (int id, EmployeeDtoForUpdate employeeDto, bool trackChanges);
         Task DeleteOneEmployeeAsync (int id, bool trackChanges);
     }

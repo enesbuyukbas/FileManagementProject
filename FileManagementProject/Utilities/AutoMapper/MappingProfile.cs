@@ -8,6 +8,8 @@ namespace FileManagementProject.Utilities.AutoMapper
     {
         public MappingProfile()
         {
+            CreateMap<EmployeeDtoForCreate, Employee>();
+            CreateMap<Employee, EmployeeDtoForCreate>();
             CreateMap<EmployeeDtoForUpdate, Employee>();
             CreateMap<Employee,  EmployeeDto>();
 

@@ -1,5 +1,6 @@
 ﻿using FileManagementProject.Entities.Dtos;
 using FileManagementProject.Entities.Models;
+using FileManagementProject.Entities.RequestFeatures;
 using FileManagementProject.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,8 +17,11 @@ namespace FileManagementProject.Repositories.EFCore
 
         public void DeleteOneEmployeeAsync(Employee employee) => Delete(employee);
 
-        public async Task<IEnumerable<Employee>> GetAllEmployeesAsync(bool trackChanges) =>
+        public async Task<IEnumerable<Employee>> GetAllEmployeesAsync(EmployeeParameters employeeParameters,
+            bool trackChanges) =>
             await FindAll(trackChanges)
+            .Skip((employeeParameters.PageNumber-1)*employeeParameters.PageSize)
+            .Take(employeeParameters.PageSize)
             .ToListAsync();
 
 

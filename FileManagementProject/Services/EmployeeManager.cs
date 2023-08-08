@@ -2,6 +2,7 @@
 using FileManagementProject.Entities.Dtos;
 using FileManagementProject.Entities.Exceptions;
 using FileManagementProject.Entities.Models;
+using FileManagementProject.Entities.RequestFeatures;
 using FileManagementProject.Repositories.Contracts;
 using FileManagementProject.Services.Contracts;
 
@@ -20,12 +21,15 @@ namespace FileManagementProject.Services
         }
 
 
-        public async Task<Employee> CreateOneEmployeeAsync(Employee employee)
+        public async Task<Employee> CreateOneEmployeeAsync(EmployeeDtoForCreate employeeDto)
         {
 
-            _manager.Employee.CreateOneEmployeeAsync(employee);
+            var entity = _mapper.Map<Employee>(employeeDto);
+
+            _manager.Employee.CreateOneEmployeeAsync(entity);
+    
             await _manager.SaveAsync();
-            return employee;
+            return entity;
         }
 
         public async Task DeleteOneEmployeeAsync(int id, bool trackChanges)
@@ -36,9 +40,9 @@ namespace FileManagementProject.Services
             await _manager.SaveAsync();
         }
 
-        public async Task<IEnumerable<EmployeeDto>> GetAllEmployeesAsync(bool trackChanges)
+        public async Task<IEnumerable<EmployeeDto>> GetAllEmployeesAsync(EmployeeParameters employeeParameters, bool trackChanges)
         {
-            var employees = await _manager.Employee.GetAllEmployeesAsync(trackChanges);
+            var employees = await _manager.Employee.GetAllEmployeesAsync(employeeParameters, trackChanges);
             return _mapper.Map<IEnumerable<EmployeeDto>>(employees);
 
         }

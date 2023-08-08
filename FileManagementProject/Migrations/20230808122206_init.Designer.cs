@@ -4,6 +4,7 @@ using FileManagementProject.Repositories.EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FileManagementProject.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20230808122206_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,18 +153,18 @@ namespace FileManagementProject.Migrations
                         {
                             EmployeeId = 2,
                             DepartmentId = 2,
-                            EmployeeEmail = "beyzayuksel0111@gmail.com",
-                            EmployeeFirstName = "Beyza",
-                            EmployeeLastName = "Yüksel",
+                            EmployeeEmail = "enes_buyukbas@hotmail.com",
+                            EmployeeFirstName = "Erhan",
+                            EmployeeLastName = "Büyük",
                             EmployeePassword = "12345"
                         },
                         new
                         {
                             EmployeeId = 3,
                             DepartmentId = 3,
-                            EmployeeEmail = "erhanyılmaz@gmail.com",
-                            EmployeeFirstName = "erhan",
-                            EmployeeLastName = "yılmaz",
+                            EmployeeEmail = "beyzayuksel0111@gmail.com",
+                            EmployeeFirstName = "Beyza",
+                            EmployeeLastName = "Yüksel",
                             EmployeePassword = "123456789"
                         },
                         new
