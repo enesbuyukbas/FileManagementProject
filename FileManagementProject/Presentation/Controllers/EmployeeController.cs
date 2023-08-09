@@ -9,6 +9,7 @@ using FileManagementProject.Services.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace FileManagementProject.Controllers
 {
@@ -27,8 +28,13 @@ namespace FileManagementProject.Controllers
         [HttpGet("/employees")]
         public async Task<IActionResult> GetAllEmployeeAsync([FromQuery] EmployeeParameters employeeParameters)
         {
-               var employees = await _manager.EmployeeService.GetAllEmployeesAsync(employeeParameters, false);
-               return Ok(employees);
+               var pagedResult = await _manager
+                .EmployeeService
+                .GetAllEmployeesAsync(employeeParameters, false);
+
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
+
+               return Ok(pagedResult.employees);
         }
 
         [ServiceFilter(typeof(LogFilterAttribute))]

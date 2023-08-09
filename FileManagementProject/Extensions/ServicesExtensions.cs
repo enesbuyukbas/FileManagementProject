@@ -37,5 +37,18 @@ namespace FileManagementProject.Extensions
             services.AddSingleton<LogFilterAttribute>(); 
             //loglama için bir tane nesnenin oluşması yeterli bundan dolayı singleton tanımladık
         }
+
+        public static void ConfigureCors(this IServiceCollection services) 
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder => 
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .WithExposedHeaders("X-Pagination")
+                );
+            });
+        }
     }
 }

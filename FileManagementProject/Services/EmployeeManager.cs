@@ -40,11 +40,13 @@ namespace FileManagementProject.Services
             await _manager.SaveAsync();
         }
 
-        public async Task<IEnumerable<EmployeeDto>> GetAllEmployeesAsync(EmployeeParameters employeeParameters, bool trackChanges)
+        public async Task<(IEnumerable<EmployeeDto> employees, MetaData metaData)> GetAllEmployeesAsync(EmployeeParameters employeeParameters, bool trackChanges)
         {
-            var employees = await _manager.Employee.GetAllEmployeesAsync(employeeParameters, trackChanges);
-            return _mapper.Map<IEnumerable<EmployeeDto>>(employees);
-
+            var employeesWithMetaData = await _manager
+                .Employee
+                .GetAllEmployeesAsync(employeeParameters, trackChanges);
+            var employeesDto = _mapper.Map<IEnumerable<EmployeeDto>>(employeesWithMetaData);
+            return (employeesDto, employeesWithMetaData.MetaData);
         }
 
         public async Task<Employee> GetOneEmployeeByIdAsync(int id, bool trackChanges)

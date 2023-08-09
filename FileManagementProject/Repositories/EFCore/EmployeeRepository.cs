@@ -17,13 +17,19 @@ namespace FileManagementProject.Repositories.EFCore
 
         public void DeleteOneEmployeeAsync(Employee employee) => Delete(employee);
 
-        public async Task<IEnumerable<Employee>> GetAllEmployeesAsync(EmployeeParameters employeeParameters,
-            bool trackChanges) =>
-            await FindAll(trackChanges)
-            .Skip((employeeParameters.PageNumber-1)*employeeParameters.PageSize)
-            .Take(employeeParameters.PageSize)
+        public async Task<PagedList<Employee>> GetAllEmployeesAsync(EmployeeParameters employeeParameters,
+            bool trackChanges)
+        {
+            var employees = await FindAll(trackChanges)
+            .OrderBy(e => e.EmployeeId)
             .ToListAsync();
 
+            return PagedList<Employee>
+                .ToPagedList(employees,
+                employeeParameters.PageNumber,
+                employeeParameters.PageSize);
+        }
+            
 
         public async Task<Employee> GetOneEmployeeByIdAsync(int id, bool trackChanges) =>
             await FindByCondition(b => b.EmployeeId.Equals(id), trackChanges)

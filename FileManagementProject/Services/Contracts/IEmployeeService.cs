@@ -6,7 +6,7 @@ namespace FileManagementProject.Services.Contracts
 {
     public interface IEmployeeService
     {
-        Task<IEnumerable<EmployeeDto>> GetAllEmployeesAsync(EmployeeParameters employeeParameters, bool trackChanges);
+        Task<(IEnumerable<EmployeeDto> employees, MetaData metaData)> GetAllEmployeesAsync(EmployeeParameters employeeParameters, bool trackChanges);
         Task<Employee> GetOneEmployeeByIdAsync (int id, bool trackChanges);
         Employee GetOneEmployeeWithDepartment (int id, bool trackChanges);
         Task<Employee> CreateOneEmployeeAsync (EmployeeDtoForCreate employeeDto);
