@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FileManagementProject.Repositories.EFCore
 {
-    public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
+    public sealed class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
     {
         public EmployeeRepository(RepositoryContext context) : base(context)
         {
@@ -21,6 +21,7 @@ namespace FileManagementProject.Repositories.EFCore
             bool trackChanges)
         {
             var employees = await FindAll(trackChanges)
+            .FilterEmployee(employeeParameters.requestDepartmentId)
             .OrderBy(e => e.EmployeeId)
             .ToListAsync();
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LiqihgDGaptWYkgXTTTBMJu0Ryhia7o0dZMRgzHE1L/42qo3pGsXnKlc1WsABC4a0oL0FcBTKNUDSEzMS9s7Vw==",
+  "dgSpecHash": "0Eqx/v4/OCnYcki9pv3Oqnvzuyp+FuZc8PSpbmevC+AJeKhKKYmrDDW/14wN3TRPjlclBebDYDH9LCAUK0dAjA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\MY PROJECTS\\FileManagement\\FileManagementProject\\FileManagementProject\\FileManagementProject.csproj",
   "expectedPackageFiles": [
@@ -66,6 +66,7 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.21.0\\system.identitymodel.tokens.jwt.6.21.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\system.linq.dynamic.core\\1.3.4\\system.linq.dynamic.core.1.3.4.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",

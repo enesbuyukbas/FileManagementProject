@@ -42,6 +42,9 @@ namespace FileManagementProject.Services
 
         public async Task<(IEnumerable<EmployeeDto> employees, MetaData metaData)> GetAllEmployeesAsync(EmployeeParameters employeeParameters, bool trackChanges)
         {
+            if (!employeeParameters.ValidDepartmentId)
+                throw new DepartmentIsNullBadRequestException();
+
             var employeesWithMetaData = await _manager
                 .Employee
                 .GetAllEmployeesAsync(employeeParameters, trackChanges);
