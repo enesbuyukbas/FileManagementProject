@@ -15,6 +15,8 @@ namespace FileManagementProject.Utilities.AutoMapper
 
             CreateMap<Department, DepartmentDto>();
             CreateMap<DepartmentDtoForUpdate, Department>();
+
+            CreateMap<UserForRegistrationDto, User>();
         }
     }
 }

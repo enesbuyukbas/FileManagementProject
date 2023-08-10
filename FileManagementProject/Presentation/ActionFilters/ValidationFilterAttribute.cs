@@ -11,7 +11,7 @@ namespace FileManagementProject.Presentation.ActionFilters
             var action = context.RouteData.Values["action"];
 
             var param = context.ActionArguments
-                .SingleOrDefault(p => p.Value.ToString().Contains("Employee")).Value;
+                .SingleOrDefault(p => p.Value.ToString().Contains("Dto")).Value;
 
             if (param is null)
             {

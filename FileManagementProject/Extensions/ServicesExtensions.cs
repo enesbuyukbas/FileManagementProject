@@ -1,8 +1,10 @@
-﻿using FileManagementProject.Presentation.ActionFilters;
+﻿using FileManagementProject.Entities.Models;
+using FileManagementProject.Presentation.ActionFilters;
 using FileManagementProject.Repositories.Contracts;
 using FileManagementProject.Repositories.EFCore;
 using FileManagementProject.Services;
 using FileManagementProject.Services.Contracts;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace FileManagementProject.Extensions
@@ -49,6 +51,23 @@ namespace FileManagementProject.Extensions
                     .WithExposedHeaders("X-Pagination")
                 );
             });
+        }
+
+        public static void ConfigureIdentity(this IServiceCollection services)
+        {
+            var builder = services.AddIdentity<User, IdentityRole>(opts =>
+            {
+                opts.Password.RequireDigit = true;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequiredLength = 9;
+
+                opts.User.RequireUniqueEmail = true;
+            })
+                .AddEntityFrameworkStores<RepositoryContext>()
+                .AddDefaultTokenProviders();
+
         }
     }
 }

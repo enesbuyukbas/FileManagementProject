@@ -4,6 +4,7 @@ using FileManagementProject.Repositories.EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FileManagementProject.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20230810110530_CreatingIdentityTables")]
+    partial class CreatingIdentityTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -298,29 +301,6 @@ namespace FileManagementProject.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "bea680da-93be-4268-8129-8bcd4b9d5b3d",
-                            ConcurrencyStamp = "9f231a0b-69af-4162-84f9-f3f61560a8f6",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        },
-                        new
-                        {
-                            Id = "3174fe5f-44c8-4439-9045-f748db61ad4c",
-                            ConcurrencyStamp = "8afac0b6-6692-4310-acc9-6c8c7802c2e3",
-                            Name = "Director",
-                            NormalizedName = "DIRECTOR"
-                        },
-                        new
-                        {
-                            Id = "601f2a45-28f4-4290-ad08-590d1a74d806",
-                            ConcurrencyStamp = "3a4c7d92-05dc-419f-bde6-b92d0fd173dc",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

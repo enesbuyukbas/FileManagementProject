@@ -2,6 +2,7 @@ using FileManagementProject.Extensions;
 using FileManagementProject.Presentation.ActionFilters;
 using FileManagementProject.Repositories.EFCore;
 using FileManagementProject.Services.Contracts;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -27,6 +28,8 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.ConfigureActionFilters();
 builder.Services.ConfigureCors();
 
+builder.Services.AddAuthentication();
+builder.Services.ConfigureIdentity();
 
 var app = builder.Build();
 
@@ -49,6 +52,7 @@ app.UseHttpsRedirection();
 
 app.UseCors("CorsPolicy");
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

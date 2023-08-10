@@ -4,5 +4,6 @@
     {
         IEmployeeService EmployeeService { get; }
         IDepartmentService DepartmentService { get; }
+        IAuthenticationService AuthenticationService { get; }
     }
 }
