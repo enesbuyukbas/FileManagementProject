@@ -309,3 +309,63 @@
 2023-08-10 14:27:01.1832 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
 2023-08-10 14:27:03.3960 Info AppDomain Shutting down. LogFactory closing...
 2023-08-10 14:27:03.4099 Info LogFactory has been closed.
+2023-08-14 09:36:14.0457 Info Message Template Auto Format enabled
+2023-08-14 09:36:14.1616 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 09:36:14.2128 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 14:57:39.8879 Info Message Template Auto Format enabled
+2023-08-14 14:57:40.0105 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 14:57:40.0433 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 16:06:41.3501 Info Message Template Auto Format enabled
+2023-08-14 16:06:41.4614 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 16:06:41.4920 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 16:09:33.5278 Info Message Template Auto Format enabled
+2023-08-14 16:09:33.7467 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 16:09:33.8049 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 16:13:51.9720 Info Message Template Auto Format enabled
+2023-08-14 16:13:52.2049 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 16:13:52.2901 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 16:33:28.4653 Info Message Template Auto Format enabled
+2023-08-14 16:33:28.6448 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 16:33:28.6794 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 16:38:04.0438 Info Message Template Auto Format enabled
+2023-08-14 16:38:04.1715 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 16:38:04.2032 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 16:41:14.0005 Info Message Template Auto Format enabled
+2023-08-14 16:41:14.2734 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 16:41:14.3077 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 16:51:58.0048 Info Message Template Auto Format enabled
+2023-08-14 16:51:58.1864 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 16:51:58.2474 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 16:59:07.7996 Info Message Template Auto Format enabled
+2023-08-14 16:59:08.0732 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 16:59:08.1201 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 17:01:46.2294 Info Message Template Auto Format enabled
+2023-08-14 17:01:46.3936 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 17:01:46.4200 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 17:11:01.0137 Info Message Template Auto Format enabled
+2023-08-14 17:11:01.1466 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 17:11:01.1814 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 17:14:51.5014 Info Message Template Auto Format enabled
+2023-08-14 17:14:51.7223 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 17:14:51.7942 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 17:16:49.5236 Info Message Template Auto Format enabled
+2023-08-14 17:16:49.6554 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 17:16:49.6934 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 17:25:53.6706 Info Message Template Auto Format enabled
+2023-08-14 17:25:53.8307 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 17:25:53.8831 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 17:37:24.3607 Info Message Template Auto Format enabled
+2023-08-14 17:37:24.6413 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 17:37:24.6859 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 17:39:32.4367 Info Message Template Auto Format enabled
+2023-08-14 17:39:32.5575 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 17:39:32.5917 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 17:41:57.1346 Info Message Template Auto Format enabled
+2023-08-14 17:41:57.2060 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 17:41:57.2295 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 18:00:53.9201 Info Message Template Auto Format enabled
+2023-08-14 18:00:54.5916 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 18:00:54.6970 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config
+2023-08-14 18:10:26.4390 Info Message Template Auto Format enabled
+2023-08-14 18:10:26.6670 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-08-14 18:10:26.7343 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\FileManagementProject\nlog.config

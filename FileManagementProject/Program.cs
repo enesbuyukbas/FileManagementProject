@@ -18,7 +18,7 @@ builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.ConfigureSwagger();
 
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureRepositoryManager();
@@ -28,8 +28,9 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.ConfigureActionFilters();
 builder.Services.ConfigureCors();
 
-builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
+builder.Services.ConfigureJWT(builder.Configuration);
+
 
 var app = builder.Build();
 
@@ -40,7 +41,10 @@ app.ConfigureExceptionHandler(logger);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(s =>
+    {
+        s.SwaggerEndpoint("/swagger/v1/swagger.json", "FileProject v1");
+    });
 }
 
 if (app.Environment.IsProduction())

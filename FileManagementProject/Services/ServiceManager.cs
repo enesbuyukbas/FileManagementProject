@@ -24,8 +24,8 @@ namespace FileManagementProject.Services
             _departmentService = new Lazy<IDepartmentService>(() => 
             new DepartmentManager(repositoryManager, logger, mapper));
 
-            _authenticationService = new Lazy<IAuthenticationService>(() => 
-            new AuthenticationManager(logger, mapper, userManager, configuration))
+            _authenticationService = new Lazy<IAuthenticationService>(() =>
+            new AuthenticationManager(logger, mapper, userManager, configuration));
         }
         public IEmployeeService EmployeeService => _employeeService.Value;
 

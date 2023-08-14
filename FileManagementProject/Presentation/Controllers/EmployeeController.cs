@@ -6,6 +6,7 @@ using FileManagementProject.Presentation.ActionFilters;
 using FileManagementProject.Repositories.Contracts;
 using FileManagementProject.Repositories.EFCore;
 using FileManagementProject.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ namespace FileManagementProject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class EmployeeController : ControllerBase
     {
         private readonly IServiceManager _manager;
@@ -24,6 +26,7 @@ namespace FileManagementProject.Controllers
             _manager = manager;
         }
 
+        [Authorize(Roles = "User")]
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("/employees")]
         public async Task<IActionResult> GetAllEmployeeAsync([FromQuery] EmployeeParameters employeeParameters)
@@ -36,7 +39,7 @@ namespace FileManagementProject.Controllers
 
                return Ok(pagedResult.employees);
         }
-
+        [Authorize(Roles = "User")]
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("/employee{id:int}")]
         public async Task<IActionResult> GetOneEmployeeAsync([FromRoute(Name = "id")] int id)
@@ -50,7 +53,7 @@ namespace FileManagementProject.Controllers
 
         }
 
-
+        [Authorize(Roles = "User")]
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("employee/{id:int}/department")]
         public IActionResult GetEmployeeWithDepartmentName([FromRoute(Name = "id")] int id)

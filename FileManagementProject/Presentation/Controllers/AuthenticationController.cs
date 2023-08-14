@@ -7,6 +7,7 @@ namespace FileManagementProject.Presentation.Controllers
 {
     [ApiController]
     [Route("api/authentication")]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class AuthenticationController : ControllerBase
     {
         private readonly IServiceManager _service;
@@ -23,7 +24,7 @@ namespace FileManagementProject.Presentation.Controllers
             var result = await _service
                 .AuthenticationService
                 .RegisterUser(userForRegistrationDto);
-
+             
             if(!result.Succeeded)
             {
                 foreach (var error in result.Errors)
@@ -34,5 +35,19 @@ namespace FileManagementProject.Presentation.Controllers
             }
             return StatusCode(201);
         }
+
+
+        [HttpPost("login")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> Authenticate([FromBody] UserForAuthenticationDto user)
+        {
+            if (!await _service.AuthenticationService.ValidateUser(user))
+                return Unauthorized(); //401
+            return Ok(new
+            {
+                Token = await _service.AuthenticationService.CreateToken()
+            });
+        }
+
     }
 }

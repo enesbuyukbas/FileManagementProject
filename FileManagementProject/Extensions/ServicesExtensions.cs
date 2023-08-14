@@ -4,8 +4,12 @@ using FileManagementProject.Repositories.Contracts;
 using FileManagementProject.Repositories.EFCore;
 using FileManagementProject.Services;
 using FileManagementProject.Services.Contracts;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Text;
 
 namespace FileManagementProject.Extensions
 {
@@ -61,13 +65,72 @@ namespace FileManagementProject.Extensions
                 opts.Password.RequireLowercase = false;
                 opts.Password.RequireUppercase = false;
                 opts.Password.RequireNonAlphanumeric = false;
-                opts.Password.RequiredLength = 9;
+                opts.Password.RequiredLength = 4;
 
                 opts.User.RequireUniqueEmail = true;
             })
                 .AddEntityFrameworkStores<RepositoryContext>()
                 .AddDefaultTokenProviders();
 
+        }
+
+        public static void ConfigureJWT(this IServiceCollection services, 
+            IConfiguration configuration)
+        {
+            var jwtSettings = configuration.GetSection("JwtSettings");
+            var secretKey = jwtSettings["secretKey"];
+
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options => 
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtSettings["validIssuer"],
+                    ValidAudience = jwtSettings["validAudience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
+                }
+
+            );
+        }
+
+        public static void ConfigureSwagger(this IServiceCollection services)
+        {
+            services.AddSwaggerGen(s =>
+            {
+                s.SwaggerDoc("v1", new OpenApiInfo { Title = "FileProject", Version = "v1" });
+
+                s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Place to add JWT with Bearer",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+
+                s.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Name = "Bearer"
+                        },
+                        new List<string>()
+                    }
+                });
+            });
         }
     }
 }
