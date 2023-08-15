@@ -1,0 +1,29 @@
+2023-08-15 08:41:03.7959 WARN ValidateUser : Authentication failed. Wrong username or password
+2023-08-15 09:21:45.3123 WARN ValidateUser : Authentication failed. Wrong username or password
+2023-08-15 09:47:31.4997 WARN ValidateUser : Authentication failed. Wrong username or password
+2023-08-15 13:45:55.3428 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-15T10:45:55.3316138Z"}
+2023-08-15 13:51:11.7268 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-15T10:51:11.7267636Z"}
+2023-08-15 13:51:16.7714 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"2","CreateAt":"2023-08-15T10:51:16.7714648Z"}
+2023-08-15 13:51:22.8257 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"7","CreateAt":"2023-08-15T10:51:22.825706Z"}
+2023-08-15 13:51:32.5252 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"1","CreateAt":"2023-08-15T10:51:32.5252625Z"}
+2023-08-15 13:51:48.7753 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:51:48.7753145Z"}
+2023-08-15 13:51:52.3516 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:51:52.3515774Z"}
+2023-08-15 13:52:09.3443 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:52:09.3443701Z"}
+2023-08-15 13:52:12.9362 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:52:12.9362182Z"}
+2023-08-15 13:52:17.1745 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:52:17.1745183Z"}
+2023-08-15 13:52:20.4340 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:52:20.4340638Z"}
+2023-08-15 13:52:38.4581 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:52:38.4581141Z"}
+2023-08-15 13:52:59.7954 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:52:59.7953789Z"}
+2023-08-15 13:53:04.3809 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:53:04.3809527Z"}
+2023-08-15 13:53:09.7261 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T10:53:09.7261408Z"}
+2023-08-15 14:02:02.1413 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-15T11:02:02.1328675Z"}
+2023-08-15 14:02:14.9868 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"1","CreateAt":"2023-08-15T11:02:14.9868439Z"}
+2023-08-15 14:02:23.7088 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"2","CreateAt":"2023-08-15T11:02:23.7088098Z"}
+2023-08-15 14:02:40.8030 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"7","CreateAt":"2023-08-15T11:02:40.8030025Z"}
+2023-08-15 14:02:50.5506 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"5","CreateAt":"2023-08-15T11:02:50.5506459Z"}
+2023-08-15 14:20:35.9047 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T11:20:35.8961256Z"}
+2023-08-15 14:20:41.2618 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-15T11:20:41.2617507Z"}
+2023-08-15 14:22:59.8729 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"1","CreateAt":"2023-08-15T11:22:59.8727419Z"}
+2023-08-15 14:23:07.1509 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"2","CreateAt":"2023-08-15T11:23:07.1509457Z"}
+2023-08-15 14:25:14.9539 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-15T11:25:14.9452994Z"}
+2023-08-15 14:25:21.1911 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"1","CreateAt":"2023-08-15T11:25:21.1910926Z"}

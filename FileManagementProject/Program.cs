@@ -41,10 +41,7 @@ app.ConfigureExceptionHandler(logger);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(s =>
-    {
-        s.SwaggerEndpoint("/swagger/v1/swagger.json", "FileProject v1");
-    });
+    app.UseSwaggerUI();
 }
 
 if (app.Environment.IsProduction())

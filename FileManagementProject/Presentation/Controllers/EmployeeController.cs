@@ -16,7 +16,7 @@ namespace FileManagementProject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "v1")]
+   // [ApiExplorerSettings(GroupName = "v1")]
     public class EmployeeController : ControllerBase
     {
         private readonly IServiceManager _manager;
@@ -26,7 +26,7 @@ namespace FileManagementProject.Controllers
             _manager = manager;
         }
 
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin")]
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("/employees")]
         public async Task<IActionResult> GetAllEmployeeAsync([FromQuery] EmployeeParameters employeeParameters)
@@ -39,7 +39,7 @@ namespace FileManagementProject.Controllers
 
                return Ok(pagedResult.employees);
         }
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin, User")]
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("/employee{id:int}")]
         public async Task<IActionResult> GetOneEmployeeAsync([FromRoute(Name = "id")] int id)
@@ -53,7 +53,7 @@ namespace FileManagementProject.Controllers
 
         }
 
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin, Director")]
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("employee/{id:int}/department")]
         public IActionResult GetEmployeeWithDepartmentName([FromRoute(Name = "id")] int id)
@@ -76,6 +76,7 @@ namespace FileManagementProject.Controllers
 
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpPost]
+        [Route("~/api/employee/create/{id:int}")]
         public async Task<IActionResult> CreateOneEmployeeAsync([FromBody] EmployeeDtoForCreate employeeDto)
         {
 
@@ -100,7 +101,8 @@ namespace FileManagementProject.Controllers
         }
 
         [ServiceFilter(typeof(LogFilterAttribute))]
-        [HttpPut("{id:int}")]
+        [HttpPut]
+        [Route("~/api/employee/update/{id:int}")]
         public async Task<IActionResult> UpdateEmployeeAsync([FromRoute(Name = "id")] int id, [FromBody] EmployeeDtoForUpdate employeeDto)
         {
 
