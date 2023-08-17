@@ -1,0 +1,35 @@
+2023-08-17 16:07:33.5716 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T13:07:33.5040562Z"}
+2023-08-17 16:08:05.8943 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"2","CreateAt":"2023-08-17T13:08:05.8942296Z"}
+2023-08-17 16:08:15.3223 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"4","CreateAt":"2023-08-17T13:08:15.3222918Z"}
+2023-08-17 16:08:20.8897 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T13:08:20.8896505Z"}
+2023-08-17 16:08:25.2734 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"3","CreateAt":"2023-08-17T13:08:25.2734579Z"}
+2023-08-17 16:08:28.7524 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"11","CreateAt":"2023-08-17T13:08:28.751502Z"}
+2023-08-17 16:08:29.4126 ERROR Something went wrong:FileManagementProject.Entities.Exceptions.EmployeeNotFoundException: The employee with id : 11 not found.
+   at FileManagementProject.Services.EmployeeManager.GetOneEmployeeByIdAndCheckExists(Int32 id, Boolean trackChanges) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Services\EmployeeManager.cs:line 105
+   at FileManagementProject.Services.EmployeeManager.GetOneEmployeeByIdAsync(Int32 id, Boolean trackChanges) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Services\EmployeeManager.cs:line 67
+   at FileManagementProject.Controllers.EmployeeController.GetOneEmployeeAsync(Int32 id) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Presentation\Controllers\EmployeeController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-08-17 16:20:53.3408 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T13:20:53.3288236Z"}
+2023-08-17 16:41:15.9508 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T13:41:15.8615867Z"}
+2023-08-17 16:41:30.8578 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T13:41:30.8577887Z"}
+2023-08-17 16:41:57.5847 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T13:41:57.5846652Z"}
+2023-08-17 16:44:28.2191 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T13:44:28.2088746Z"}
+2023-08-17 16:44:50.1267 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T13:44:50.1135194Z"}
+2023-08-17 16:44:59.1092 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T13:44:59.1091453Z"}
+2023-08-17 17:46:17.2973 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-17T14:46:17.2867905Z"}
+2023-08-17 17:46:50.4570 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"2","CreateAt":"2023-08-17T14:46:50.4568996Z"}
+2023-08-17 17:46:52.7521 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"3","CreateAt":"2023-08-17T14:46:52.7521589Z"}

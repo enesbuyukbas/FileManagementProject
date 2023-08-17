@@ -7,6 +7,7 @@ using FileManagementProject.Services.Contracts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -134,6 +135,12 @@ namespace FileManagementProject.Extensions
                     }
                 });
             });
+        }
+
+        public static void ConfigureRedis(this IServiceCollection services, IConfiguration configuration)
+        {
+            var redisConnectionString = configuration.GetConnectionString("Redis");
+            services.AddTransient<IRedisService, RedisManager>();
         }
     }
 }

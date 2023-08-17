@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using FileManagementProject.Entities.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace FileManagementProject.Entities.Dtos
 {
@@ -13,7 +15,7 @@ namespace FileManagementProject.Entities.Dtos
         [Required(ErrorMessage = "Password is required")]
         public string? Password { get; init; }
         public string? Email { get; init; }
-        public string? PhoneNumber { get; init; }
+
 
         public ICollection<string>? Roles { get; init; }
     }

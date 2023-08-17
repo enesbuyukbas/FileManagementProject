@@ -9,5 +9,7 @@ namespace FileManagementProject.Entities.Models
         public int? ParentDepartmentId { get; set; }
         public List<Employee> Employees { get; set; }
 
+ 
+
     }
 }

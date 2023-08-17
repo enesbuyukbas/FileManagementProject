@@ -4,6 +4,7 @@ using FileManagementProject.Repositories.EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FileManagementProject.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20230816134019_new")]
+    partial class @new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -308,22 +311,22 @@ namespace FileManagementProject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "de2f3720-88c1-4d75-873c-5624715086b7",
-                            ConcurrencyStamp = "6caf2408-4d25-432f-8b29-d823d059a574",
+                            Id = "1122400d-f37c-4891-9f04-551cde2bdf21",
+                            ConcurrencyStamp = "a6845321-a2a9-4c43-9252-128710ff57af",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "a68056a9-f626-4202-ab12-d88838bb57b4",
-                            ConcurrencyStamp = "d49017c1-254b-48c5-96ed-8bb353afa733",
+                            Id = "e9dfb7f5-748b-43de-b344-c2aaa4ef9a32",
+                            ConcurrencyStamp = "698ee147-2615-4806-adda-2580167d4de9",
                             Name = "Director",
                             NormalizedName = "DIRECTOR"
                         },
                         new
                         {
-                            Id = "4c42c603-7e9a-41be-b745-b420a085fdd5",
-                            ConcurrencyStamp = "43957515-7381-4ef4-9f8b-c9cf2a61677c",
+                            Id = "297210e3-f9eb-4584-b205-c45d4accbca8",
+                            ConcurrencyStamp = "bf7c45ef-236e-4ca9-84df-51a097406dca",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

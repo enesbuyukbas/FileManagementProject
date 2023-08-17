@@ -10,14 +10,16 @@ namespace FileManagementProject.Services
 {
     public class EmployeeManager : IEmployeeService
     {
+        private readonly IRedisService _redisService;
         private readonly IRepositoryManager _manager;
         private readonly ILoggerService _logger;
         private readonly IMapper _mapper;
-        public EmployeeManager(IRepositoryManager manager, ILoggerService logger, IMapper mapper)
+        public EmployeeManager(IRepositoryManager manager, ILoggerService logger, IMapper mapper, IRedisService redisService)
         {
             _manager = manager;
             _logger = logger;
             _mapper = mapper;
+            _redisService = redisService;
         }
 
 
@@ -54,8 +56,23 @@ namespace FileManagementProject.Services
 
         public async Task<Employee> GetOneEmployeeByIdAsync(int id, bool trackChanges)
         {
-            var entity = await GetOneEmployeeByIdAndCheckExists(id, trackChanges);
-            return entity;
+            var cacheKey = $"Employee_{id}";
+            var cachedEmployee = await _redisService.GetCachedDataAsync<Employee>(cacheKey);
+            TimeSpan timeToLive = TimeSpan.FromSeconds(60);
+
+            if (cachedEmployee != null)
+            {
+                return cachedEmployee;
+            }
+
+            var employee = await GetOneEmployeeByIdAndCheckExists(id, trackChanges);
+
+            if (employee != null)
+            {
+                await _redisService.SetCachedDataAsync(cacheKey, employee, timeToLive);
+            }
+
+            return employee;
         }
 
         public Employee GetOneEmployeeWithDepartment(int id, bool trackChanges)
