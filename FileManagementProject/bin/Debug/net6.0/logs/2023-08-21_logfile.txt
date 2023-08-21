@@ -1,0 +1,181 @@
+2023-08-21 09:57:31.9128 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T06:57:31.9021122Z"}
+2023-08-21 09:57:55.4941 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"1","CreateAt":"2023-08-21T06:57:55.4940892Z"}
+2023-08-21 09:57:59.7286 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"2","CreateAt":"2023-08-21T06:57:59.7286123Z"}
+2023-08-21 09:58:03.1925 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"3","CreateAt":"2023-08-21T06:58:03.1925Z"}
+2023-08-21 09:58:06.5566 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"3","CreateAt":"2023-08-21T06:58:06.5566386Z"}
+2023-08-21 09:58:07.7683 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"4","CreateAt":"2023-08-21T06:58:07.76834Z"}
+2023-08-21 09:58:13.3195 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"5","CreateAt":"2023-08-21T06:58:13.3195076Z"}
+2023-08-21 09:58:16.2877 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"6","CreateAt":"2023-08-21T06:58:16.2876839Z"}
+2023-08-21 09:58:20.6450 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"7","CreateAt":"2023-08-21T06:58:20.6450369Z"}
+2023-08-21 09:58:25.7559 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"8","CreateAt":"2023-08-21T06:58:25.7559624Z"}
+2023-08-21 10:06:04.6543 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:06:04.645161Z"}
+2023-08-21 10:06:13.8013 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:06:13.8013213Z"}
+2023-08-21 10:06:18.9453 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:06:18.9452784Z"}
+2023-08-21 10:06:22.0992 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:06:22.0992225Z"}
+2023-08-21 10:06:26.4035 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:06:26.403552Z"}
+2023-08-21 10:06:29.2924 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:06:29.2924255Z"}
+2023-08-21 10:06:33.5937 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:06:33.5937308Z"}
+2023-08-21 10:13:27.0193 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:13:27.0103522Z"}
+2023-08-21 10:13:27.3279 ERROR Something went wrong:FileManagementProject.Entities.Exceptions.DepartmentIsNullBadRequestException: Department should be exist 
+   at FileManagementProject.Services.EmployeeManager.GetAllEmployeesAsync(EmployeeParameters employeeParameters, Boolean trackChanges) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Services\EmployeeManager.cs:line 48
+   at FileManagementProject.Controllers.EmployeeController.GetAllEmployeeAsync(EmployeeParameters employeeParameters) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Presentation\Controllers\EmployeeController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-08-21 10:13:50.0061 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:13:50.0060615Z"}
+2023-08-21 10:13:50.0809 ERROR Something went wrong:FileManagementProject.Entities.Exceptions.DepartmentIsNullBadRequestException: Department should be exist 
+   at FileManagementProject.Services.EmployeeManager.GetAllEmployeesAsync(EmployeeParameters employeeParameters, Boolean trackChanges) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Services\EmployeeManager.cs:line 48
+   at FileManagementProject.Controllers.EmployeeController.GetAllEmployeeAsync(EmployeeParameters employeeParameters) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Presentation\Controllers\EmployeeController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-08-21 10:13:58.1003 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:13:58.1003467Z"}
+2023-08-21 10:13:58.1599 ERROR Something went wrong:FileManagementProject.Entities.Exceptions.DepartmentIsNullBadRequestException: Department should be exist 
+   at FileManagementProject.Services.EmployeeManager.GetAllEmployeesAsync(EmployeeParameters employeeParameters, Boolean trackChanges) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Services\EmployeeManager.cs:line 48
+   at FileManagementProject.Controllers.EmployeeController.GetAllEmployeeAsync(EmployeeParameters employeeParameters) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Presentation\Controllers\EmployeeController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-08-21 10:14:00.3687 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:14:00.3687699Z"}
+2023-08-21 10:14:00.4295 ERROR Something went wrong:FileManagementProject.Entities.Exceptions.DepartmentIsNullBadRequestException: Department should be exist 
+   at FileManagementProject.Services.EmployeeManager.GetAllEmployeesAsync(EmployeeParameters employeeParameters, Boolean trackChanges) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Services\EmployeeManager.cs:line 48
+   at FileManagementProject.Controllers.EmployeeController.GetAllEmployeeAsync(EmployeeParameters employeeParameters) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Presentation\Controllers\EmployeeController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-08-21 10:19:21.7373 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:19:21.7247665Z"}
+2023-08-21 10:19:22.0281 ERROR Something went wrong:FileManagementProject.Entities.Exceptions.DepartmentIsNullBadRequestException: Department should be exist 
+   at FileManagementProject.Services.EmployeeManager.GetAllEmployeesAsync(EmployeeParameters employeeParameters, Boolean trackChanges) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Services\EmployeeManager.cs:line 48
+   at FileManagementProject.Controllers.EmployeeController.GetAllEmployeeAsync(EmployeeParameters employeeParameters) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Presentation\Controllers\EmployeeController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-08-21 10:25:18.8225 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:25:18.8128794Z"}
+2023-08-21 10:25:19.0809 ERROR Something went wrong:FileManagementProject.Entities.Exceptions.DepartmentIsNullBadRequestException: Department should be exist 
+   at FileManagementProject.Services.EmployeeManager.GetAllEmployeesAsync(EmployeeParameters employeeParameters, Boolean trackChanges) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Services\EmployeeManager.cs:line 48
+   at FileManagementProject.Controllers.EmployeeController.GetAllEmployeeAsync(EmployeeParameters employeeParameters) in C:\Users\Lenovo\Desktop\MY PROJECTS\FileManagement\FileManagementProject\Presentation\Controllers\EmployeeController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-08-21 10:29:23.5335 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:29:23.5225628Z"}
+2023-08-21 10:29:32.9112 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:29:32.9111388Z"}
+2023-08-21 10:29:36.1619 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:29:36.1618927Z"}
+2023-08-21 10:29:51.2280 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:29:51.2280341Z"}
+2023-08-21 10:29:54.6609 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:29:54.660868Z"}
+2023-08-21 10:29:56.9505 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:29:56.9504925Z"}
+2023-08-21 10:30:00.9483 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:30:00.9480628Z"}
+2023-08-21 10:37:53.8524 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T07:37:53.8421502Z"}
+2023-08-21 10:38:00.7361 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:38:00.736137Z"}
+2023-08-21 10:38:05.5583 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:38:05.5583043Z"}
+2023-08-21 10:38:11.2341 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:38:11.2341198Z"}
+2023-08-21 10:38:15.4412 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:38:15.4412648Z"}
+2023-08-21 10:39:08.2313 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:39:08.231316Z"}
+2023-08-21 10:42:00.2859 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T07:42:00.272292Z"}
+2023-08-21 10:42:09.9244 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T07:42:09.9243638Z"}
+2023-08-21 11:50:17.2075 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T08:50:17.1880942Z"}
+2023-08-21 11:50:24.3630 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T08:50:24.3629726Z"}
+2023-08-21 11:50:28.9088 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T08:50:28.9087951Z"}
+2023-08-21 11:50:34.5496 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T08:50:34.5494127Z"}
+2023-08-21 11:50:37.5970 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T08:50:37.5970228Z"}
+2023-08-21 11:50:41.0885 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T08:50:41.088455Z"}
+2023-08-21 11:50:44.5684 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T08:50:44.5684787Z"}
+2023-08-21 12:57:24.1022 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T09:57:24.1014126Z"}
+2023-08-21 12:59:23.8131 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetAllEmployee","Id":null,"CreateAt":"2023-08-21T09:59:23.8130993Z"}
+2023-08-21 14:05:19.7481 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T11:05:19.7270769Z"}
+2023-08-21 14:05:23.2566 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"2","CreateAt":"2023-08-21T11:05:23.2565777Z"}
+2023-08-21 14:05:25.8345 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"3","CreateAt":"2023-08-21T11:05:25.8345272Z"}
+2023-08-21 14:06:37.9910 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T11:06:37.9909727Z"}
+2023-08-21 14:07:16.5872 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"2","CreateAt":"2023-08-21T11:07:16.5872098Z"}
+2023-08-21 14:08:00.2556 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetEmployeeWithDepartmentName","Id":"1","CreateAt":"2023-08-21T11:08:00.2556591Z"}
+2023-08-21 14:10:26.5957 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T11:10:26.5872783Z"}
+2023-08-21 14:10:28.4636 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"2","CreateAt":"2023-08-21T11:10:28.4636232Z"}
+2023-08-21 14:10:30.4449 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"3","CreateAt":"2023-08-21T11:10:30.4448948Z"}
+2023-08-21 14:10:33.2649 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T11:10:33.2649566Z"}
+2023-08-21 14:11:09.3663 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T11:11:09.3663556Z"}
+2023-08-21 14:11:20.9288 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"2","CreateAt":"2023-08-21T11:11:20.9287867Z"}
+2023-08-21 14:11:24.1672 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"3","CreateAt":"2023-08-21T11:11:24.167209Z"}
+2023-08-21 14:11:46.4318 INFO {"ModelName":"OnActionExecuting","Controller":"Employee","Action":"GetOneEmployee","Id":"1","CreateAt":"2023-08-21T11:11:46.4317712Z"}

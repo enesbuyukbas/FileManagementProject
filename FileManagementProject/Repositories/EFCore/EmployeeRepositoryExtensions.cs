@@ -8,8 +8,9 @@ namespace FileManagementProject.Repositories.EFCore
     public static class EmployeeRepositoryExtensions
     {
         public static IQueryable<Employee> FilterEmployee(this IQueryable<Employee> employees,
-            int requestDepartmentId) =>
+            int? requestDepartmentId) =>
             employees.Where(employee => employee.DepartmentId == requestDepartmentId);
+
 
         //public static IQueryable<Employee> Sort(this IQueryable<Employee> employees,
         //    string orderByQueryString)

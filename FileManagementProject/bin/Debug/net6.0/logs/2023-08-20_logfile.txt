@@ -1,0 +1,1 @@
+2023-08-20 18:56:48.3658 WARN ValidateUser : Authentication failed. Wrong username or password

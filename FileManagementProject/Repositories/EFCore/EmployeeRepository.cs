@@ -3,6 +3,7 @@ using FileManagementProject.Entities.Models;
 using FileManagementProject.Entities.RequestFeatures;
 using FileManagementProject.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Dynamic.Core;
 
 namespace FileManagementProject.Repositories.EFCore
 {
@@ -20,15 +21,22 @@ namespace FileManagementProject.Repositories.EFCore
         public async Task<PagedList<Employee>> GetAllEmployeesAsync(EmployeeParameters employeeParameters,
             bool trackChanges)
         {
-            var employees = await FindAll(trackChanges)
-            .FilterEmployee(employeeParameters.requestDepartmentId)
-            .OrderBy(e => e.EmployeeId)
-            .ToListAsync();
 
-            return PagedList<Employee>
-                .ToPagedList(employees,
+            var query = FindAll(trackChanges)
+            .OrderBy(e => e.EmployeeId);
+
+            if(employeeParameters.requestDepartmentId != null)
+            {
+                query = (IOrderedQueryable<Employee>)query.FilterEmployee(employeeParameters.requestDepartmentId);
+            }
+
+            var employees = await query.ToListAsync();
+
+            return PagedList<Employee>.ToPagedList(
+                employees,
                 employeeParameters.PageNumber,
-                employeeParameters.PageSize);
+                employeeParameters.PageSize
+            );
         }
             
 

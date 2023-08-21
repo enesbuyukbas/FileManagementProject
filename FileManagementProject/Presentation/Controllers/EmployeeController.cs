@@ -39,7 +39,7 @@ namespace FileManagementProject.Controllers
 
                return Ok(pagedResult.employees);
         }
-        //[Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin")]
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("/employee/{id:int}")]
         public async Task<IActionResult> GetOneEmployeeAsync([FromRoute(Name = "id")] int id)
@@ -53,7 +53,7 @@ namespace FileManagementProject.Controllers
 
         }
 
-        [Authorize(Roles = "Admin, Director")]
+        [Authorize(Roles = "Admin")]
         [ServiceFilter(typeof(LogFilterAttribute))]
         [HttpGet("/employee/{id:int}/department")]
         public IActionResult GetEmployeeWithDepartmentName([FromRoute(Name = "id")] int id)

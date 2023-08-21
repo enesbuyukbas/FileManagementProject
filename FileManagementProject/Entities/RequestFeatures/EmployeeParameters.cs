@@ -2,7 +2,7 @@
 {
     public class EmployeeParameters : RequestParameters
 	{
-        public int requestDepartmentId { get; set; }
+        public int? requestDepartmentId { get; set; }
         public bool ValidDepartmentId => requestDepartmentId != null;
 
         //public EmployeeParameters()
